@@ -1,0 +1,13 @@
+%option noyywrap
+%option main
+%{
+    #include <stdio.h>
+    #include <conio.h>
+    #include <string.h>
+%}
+a [a]
+b [b]
+Expresion ({b}*{a}+({b}*{a}+({b}*{a}+)))*
+%%
+{Expresion {printf("Se identifico: (%s)",yytext);}
+%%
